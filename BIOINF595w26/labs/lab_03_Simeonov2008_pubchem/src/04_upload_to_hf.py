@@ -1,9 +1,8 @@
-
 import datasets
 import yaml
 import pandas as pd
 
-huggingface_repo = ... 
+huggingface_repo = "sgolts/Simeonov2008"
 # e.g. maomlab/Simeonov2008
 # https://huggingface.co/datasets/maomlab/Simeonov2008
 
@@ -13,7 +12,7 @@ huggingface_repo = ...
 # the huggingface package
 dataset = datasets.load_dataset(
     "csv",
-    data_files = f"product/Simeonov2008_compounds_sanitized_20260128.tsv",
+    data_files = f"../product/Simeonov2008_compounds_sanitized_20260129.tsv",
     keep_in_memory = True,
     sep = "\t")
 
