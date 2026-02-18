@@ -5,7 +5,7 @@ import logging
 import param
 import panel as pn
 import pandas as pd
-from pandas.api.types import is_numeric_dtype
+from pandas.api.types import is_numeric_dtype, is_string_dtype
 import holoviews as hv
 from holoviews.operation.datashader import datashade, rasterize, shade, dynspread
 from holoviews.operation import decimate
@@ -193,7 +193,7 @@ Upload a .csv file with columns ['UMAP_1', 'UMAP_2', 'label', 'smiles']
             return pn.pane.Markdown(f"Y column must be numeric")
         if x_field == y_field:
             return pn.pane.Markdown("X and Y must be different columns.")
-        if not self.df[smiles_field].dtype == 'str':
+        if not is_string_dtype(self.df[smiles_field].dtype):
             return pn.pane.Markdown(f"Smiles column must be 'str'")
 
         self.current_x_field = x_field
