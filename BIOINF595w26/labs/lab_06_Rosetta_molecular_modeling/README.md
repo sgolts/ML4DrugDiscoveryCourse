@@ -104,7 +104,7 @@ experimentally determined conformation.
 
   3) Define an energy function
 
-      sfxn = pyrosetta.create_score_function(weights_tag = '...')
+    sfxn = pyrosetta.create_score_function(weights_tag = '...')
 	
   For the `weights_tag` argument you can use `'ref2015'` for the
   standard weights function or `'beta'` for the latest [candidate
@@ -114,9 +114,9 @@ experimentally determined conformation.
      does gradient based minimization and monte-carlo markov chain
      repacking of the side chains.
 	 
-      fast_relax = pyrosetta.rosetta.protocols.relax.FastRelax(
-         scorefxn_in = sfxn,
-         standard_repeats = 1)
+    fast_relax = pyrosetta.rosetta.protocols.relax.FastRelax(
+       scorefxn_in = sfxn,
+       standard_repeats = 1)
   
   To generally constrain the relaxed pose to the native pose, you can use
 
@@ -128,17 +128,17 @@ experimentally determined conformation.
 	 
   5) In PyRosetta, create a protocol that does
   
-      score the initial native pose
-	  for i in range(nsamples):
-	     clone the native pose
-		 apply FastRelax to relax it
-		 score the relaxed pose
-		 record metadata
-		   1) the difference in scores
-		   2) the heavy-atom RMSD between native and relaxed poses
-		   3) time it took to do the relax
-	     save the pose to disk
-	   save the metadata to a .tsv file
+    score the initial native pose
+	for i in range(nsamples):
+	  clone the native pose
+	  apply FastRelax to relax it
+	  score the relaxed pose
+	  record metadata
+	    1) the difference in scores
+		2) the heavy-atom RMSD between native and relaxed poses
+		3) time it took to do the relax
+	  save the pose to disk
+    save the metadata to a .tsv file
 		 
   Note: To compute the heavy atom RMSD, you can use this function  		 
     
@@ -160,11 +160,11 @@ taking a step from X2 to X1.
 
   1) Create the backrub protocol that can be applied to a pose 
   
-     backrub_protocol = pyrosetta.rosetta.protocols.backrub.BackrubProtocol()
-	 ...
-	 pose = ...
-	 backrub_protocol.apply(pose)
-	 ...
+    backrub_protocol = pyrosetta.rosetta.protocols.backrub.BackrubProtocol()
+	...
+	pose = ...
+	backrub_protocol.apply(pose)
+	...
 	 
   2) Specify MCMC parameters. A minor inconvienence with
      BackRubProtocol is that it was originally designed using the
@@ -175,8 +175,8 @@ taking a step from X2 to X1.
      which can be done in PyRosetta when calling the `init` function
      before creating the `backrub_protocol` instance.
   
-     pyrosetta.init(
-	   extra_options = f"-backrub:ntrials={ntrials} -backrub:mc_kt={mc_kt}")
+    pyrosetta.init(
+	  extra_options = f"-backrub:ntrials={ntrials} -backrub:mc_kt={mc_kt}")
 
   WARNING: PyRosetta cannot be re-initialized more than once per session. So,
   I recommend creating a python script called `src/sample_backrub.py` that
@@ -202,10 +202,10 @@ taking a step from X2 to X1.
      `mc_kt=0.7`, `ntrials=10000`, and `nsamples=10000`. But this is quite
 	 computationally expensive, so for this lab consider testing in the range
 	 
-	 input = [one of the relaxed structures]
-	 mc_kt = [0.4-1.5]
-     ntrials = [1000-10000]
-	 nsamples = 10
+	input = [one of the relaxed structures]
+	mc_kt = [0.4-1.5]
+    ntrials = [1000-10000]
+	nsamples = 10
   
   Start with small numbers for `ntrials` and `nsamples` to make sure the code
   is working, and if you have time, scale up to run on greatlakes to have them
