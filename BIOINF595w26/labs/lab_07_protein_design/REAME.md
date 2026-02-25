@@ -40,10 +40,10 @@ Reproduce the heatmaps in fig 1a:
     are compound dose (e.g. `"aMSH high"`. If you use `dplyr::mutate()` to create a new column
 	called `compound_dose`, convert it to a factor to make sure the order of the panels make sense.
 
-  * Create a [volcan](https://en.wikipedia.org/wiki/Volcano_plot_(statistics)) plot to relate effect size to signifiance
-    * use `ggplot2::geom_point()`
-    * X axis: `log2FoldChange`, Y axis: `-log10(p.adj)`
-    * Same facets as in the previous plot.
+Create a [volcan](https://en.wikipedia.org/wiki/Volcano_plot_(statistics)) plot to relate effect size to signifiance
+  * use `ggplot2::geom_point()`
+  * X axis: `log2FoldChange`, Y axis: `-log10(p.adj)`
+  * Same facets as in the previous plot.
 
 	  
 Visualize the best ddG of mutation at each position on a MC4R structure in PyMOL
@@ -61,9 +61,7 @@ Use pyrosetta to make each mutation and measure and report the change in energy.
   * Starting from from the lowest energy relaxed structure of MC4R from Lab 6
   * For each residue/amin acid combination that is not a nonsense mutation (i.e. '*')
   * Follow Step 2 in the [Point Mutant Scan](https://nbviewer.org/github/RosettaCommons/PyRosetta.notebooks/blob/master/notebooks/06.08-Point-Mutation-Scan.ipynb) pyrosetta notebook tutorial to compute score difference before and after packing.
-  * NOTE: To convert from PBD residue numbering (i.e. the pos column in Howard2025) to `pose_index` numbering (the 1-based index of the residue in the Rosetta pose) you can use
-     
-    pose_index = pose.pdb_info().pdb2pose(chain = 'A', res = pos)
+  * NOTE: To convert from PBD residue numbering (i.e. the pos column in Howard2025) to `pose_index` numbering (the 1-based index of the residue in the Rosetta pose) you can use `pose_index = pose.pdb_info().pdb2pose(chain = 'A', res = pos)`.
   
     Also note that positions that are in the protein that have experimental ddG values but aren't in the structure, will give a `pose_index` zero. For this analysis we'll skip making predictions for these residues, as it would require e.g. building missing loops.
 	
@@ -76,7 +74,7 @@ Use pyrosetta to make each mutation and measure and report the change in energy.
 
 ### 4 Briefly discuss strengths and limitations of the modeling strategy
 
-  *) How does predicted stability in the specific conformational state relate the functional outcome of the experiment? What is the 
-  *) Are there critical components of the real system are not being modeled? e.g. complexities described in (Kleinau, et al., 2020)[https://www.mdpi.com/1422-0067/21/16/5728].
-  *) Are limitations in the energy function? E.g. would using an improved energy function like the `beta_jan25` (Haddox, et al., 2025)[https://www.biorxiv.org/content/10.64898/2025.12.12.691241v1.abstract] help?
-  *) Are the limitations in the sampling that could be improved e.g. in (Barlow, et al., 2018)[https://pubs.acs.org/doi/10.1021/acs.jpcb.7b11367]?
+  * How does predicted stability in the specific conformational state relate the functional outcome of the experiment? What is the 
+  * Are there critical components of the real system are not being modeled? e.g. complexities described in (Kleinau, et al., 2020)[https://www.mdpi.com/1422-0067/21/16/5728].
+  * Are limitations in the energy function? E.g. would using an improved energy function like the `beta_jan25` (Haddox, et al., 2025)[https://www.biorxiv.org/content/10.64898/2025.12.12.691241v1.abstract] help?
+  * Are the limitations in the sampling that could be improved e.g. in (Barlow, et al., 2018)[https://pubs.acs.org/doi/10.1021/acs.jpcb.7b11367]?
