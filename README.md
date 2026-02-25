@@ -17,5 +17,8 @@ and appling state of the art machine learning methods.
 ## BIOINF595w25
 In the Winter of 2025, Matthew O'Meara and Terra Sztain co-taught this course as BIONF595 at the University of Michigan. Lectures, labs, and final projects are in the BIONF595w25 directory
 
+## BIOINF595w26
+In the Winter of 2026, Matthew O'Meara taughtthis course as BIONF595 at the University of Michigan. Lectures, labs, and final projects are in the BIONF595w26 directory
+
 
 

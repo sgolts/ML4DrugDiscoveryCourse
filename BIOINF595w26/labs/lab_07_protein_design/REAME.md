@@ -75,6 +75,6 @@ Use pyrosetta to make each mutation and measure and report the change in energy.
 ### 4 Briefly discuss strengths and limitations of the modeling strategy
 
   * How does predicted stability in the specific conformational state relate the functional outcome of the experiment? What is the 
-  * Are there critical components of the real system are not being modeled? e.g. complexities described in (Kleinau, et al., 2020)[https://www.mdpi.com/1422-0067/21/16/5728].
-  * Are limitations in the energy function? E.g. would using an improved energy function like the `beta_jan25` (Haddox, et al., 2025)[https://www.biorxiv.org/content/10.64898/2025.12.12.691241v1.abstract] help?
-  * Are the limitations in the sampling that could be improved e.g. in (Barlow, et al., 2018)[https://pubs.acs.org/doi/10.1021/acs.jpcb.7b11367]?
+  * Are there critical components of the real system are not being modeled? e.g. complexities described in [Kleinau, et al., 2020](https://www.mdpi.com/1422-0067/21/16/5728).
+  * Are limitations in the energy function? E.g. would using an improved energy function like the `beta_jan25` [Haddox, et al., 2025](https://www.biorxiv.org/content/10.64898/2025.12.12.691241v1.abstract) help?
+  * Are the limitations in the sampling that could be improved e.g. in [Barlow, et al., 2018](https://pubs.acs.org/doi/10.1021/acs.jpcb.7b11367)?
