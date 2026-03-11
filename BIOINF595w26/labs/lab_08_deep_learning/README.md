@@ -49,7 +49,7 @@ Follow the quickstart instructions
 ### 2 Download and split one of the LSD Docking datasets
 
    1) Similar to the data we used for the supervised ML data in lab 04, gather data from one of the
-      `IrwinLab` HuggingFace datasets, and sample a small and medium datasets with `1_000` and `10_000`
+      `IrwinLab` HuggingFace datasets, and sample a small and medium datasets with `10_000` and `100_000`
       compounds each.
 
    2) Split the data e.g. into e.g. 60% for train, 20% for validation, and 20% for test using
