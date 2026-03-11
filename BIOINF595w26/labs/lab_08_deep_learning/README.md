@@ -229,21 +229,21 @@ but the shape and behavior of training.
    3) Use the Weights and Biases API to download an plot the final train/valid/test losses of runs
       for each of the sweeps you ran.
 
-      import wandb
-      import pandas as pd
+          import wandb
+          import pandas as pd
 
-      api = wandb.Api()
-      runs = api.runs("maomlab/BIOINF595w26_lab_08")
+          api = wandb.Api()
+          runs = api.runs("maomlab/BIOINF595w26_lab_08")
 
-      all_summaries = []
-      for run in runs:
-          run_data = run.config | dict(run.summary)
-          run_data['project'] = run.project
-          run_data['name'] = run.name
-          run_data['id'] = run.id
-          all_summaries.append(run_data)
-
-      all_summaries = pd.DataFrame(all_summaries)
+          all_summaries = []
+          for run in runs:
+              run_data = run.config | dict(run.summary)
+              run_data['project'] = run.project
+              run_data['name'] = run.name
+              run_data['id'] = run.id
+              all_summaries.append(run_data)
+      
+          all_summaries = pd.DataFrame(all_summaries)
 
 ### Questions
 
