@@ -65,28 +65,28 @@ Create a python file `model.py` with the following parts
      the `reset_parameters` and evaluation through the `forward` function. It should implement
      the following functions:
 
-    a) Define the `__init__` function to take parameters
-
-        * input_dim: integer dimension of the input features
-        * hidden_dim: integer dimension of the hidden layers
-        * n_layers: integer number of layers in the network
-
-       and define a `self.model` to be a `nn.Sequential(...)` object which takes in a list
-       of modules that are evaluated sequentially. Initialize it with
-       `nn.Linear(...)` followed by `nn.ReLU()` repeating `n_layers` times. The dimensions should be
-       `input_dim`, `hidden_dim`, ..., `hidden_dim`, `1`.
-
-    b) Define the `forward` function to take in `x`, which should be a `torch.tensor` with dimensions
-       `[batch_size, input_dim]` and applies `self.model` as a function to `x`. Next remove dimensions
-       that are dimension 1 by calling the `.sqeeze()` function on the resulting object
-       to return it as a `torch.tensor` of dimension `[batch_size]`.
-
-    c) Define the `reset_parameters` function that initializes the parameters like this:
-
-       for m in self.modules():
-           if isinstance(m, nn.Linear):
-                nn.init.xavier_uniform_(m.weight)
-                nn.init.zeros_(m.bias)
+     a) Define the `__init__` function to take parameters
+ 
+         * input_dim: integer dimension of the input features
+         * hidden_dim: integer dimension of the hidden layers
+         * n_layers: integer number of layers in the network
+ 
+        and define a `self.model` to be a `nn.Sequential(...)` object which takes in a list
+        of modules that are evaluated sequentially. Initialize it with
+        `nn.Linear(...)` followed by `nn.ReLU()` repeating `n_layers` times. The dimensions should be
+        `input_dim`, `hidden_dim`, ..., `hidden_dim`, `1`.
+ 
+     b) Define the `forward` function to take in `x`, which should be a `torch.tensor` with dimensions
+        `[batch_size, input_dim]` and applies `self.model` as a function to `x`. Next remove dimensions
+        that are dimension 1 by calling the `.sqeeze()` function on the resulting object
+        to return it as a `torch.tensor` of dimension `[batch_size]`.
+ 
+     c) Define the `reset_parameters` function that initializes the parameters like this:
+ 
+        for m in self.modules():
+            if isinstance(m, nn.Linear):
+                 nn.init.xavier_uniform_(m.weight)
+                 nn.init.zeros_(m.bias)
 
   2) Implement the `FingerprintDataset` class that derives from
      `torch.utils.data.Dataset` and can supply the model with data for
