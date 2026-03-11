@@ -31,7 +31,7 @@ study](https://github.com/octantbio/mc4r-dms).
    
 Download the data and check that it makes sense by plotting it with ggplot2.
 
-Reproduce the heatmaps in fig 1a:
+Reproduce the heatmaps in fig 2a:
 
   * Use `ggplot2::geom_tile()`
   * X axis: `pos`, Y axis: `aa`
