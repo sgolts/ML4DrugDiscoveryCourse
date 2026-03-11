@@ -128,7 +128,7 @@ Create a python file `model.py` with the following parts
        * device: a string name for the device
        * train: a boolean value indicating if run is in train or eval mode
 
-    The function should iterate through all the batches of the `data_loader`, in each iteration
+     The function should iterate through all the batches of the `data_loader`, in each iteration
 
        * move the batch of fingerprints and scores to the GPU device
        * if in training mode set the optimizer gradient to zero
