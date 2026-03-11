@@ -238,6 +238,6 @@ but the shape and behavior of training.
 
 Please turn
 
-    *) A plot from Weights and Biases of representitive loss curves
-    *) The short answer + plots of the hyperparameter optimization
-    *) The code for `model.py` and hyperparameter optimization
+   *) A plot from Weights and Biases of representitive loss curves
+   *) The short answer + plots of the hyperparameter optimization
+   *) The code for `model.py` and hyperparameter optimization
